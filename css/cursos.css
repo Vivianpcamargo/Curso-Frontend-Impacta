@@ -1,0 +1,45 @@
+.sobre-curso {
+    background-color: var(--cor-cinza-escuro);
+    border: 1px solid var(--cor-cinza-escuro);
+    color: var(--cor-branca);
+}
+
+strong {
+    color: var(--cor-azul);
+}
+
+.investimento thead {
+    background-color: var(--cor-escura);
+    color: var(--cor-branca);
+}
+
+.investimento tbody {
+    background-color: var(--cor-cinza-escuro);
+    color: var(--cor-branca);
+}
+
+.investimento del {
+    color: var(--cor-cinza-claro);
+}
+
+.investimento ins {
+    color: var(--cor-azul);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.matriz-curricular {
+    color: var(--cor-branca);
+    list-style: none;
+}
+
+.matriz-curricular ul {
+    background-color: var(--cor-escura);
+    list-style: none;
+    font-weight: normal;
+}
+
+.matriz-curricular > li {
+    background-color: var(--cor-cinza-escuro);
+    font-weight: bold;
+}
