@@ -1,5 +1,6 @@
-from database.classes import Curso, Disciplina, Premio
-from flask import Blueprint, render_template, request
+from datetime import datetime
+from database.classes import Curso, Disciplina, Premio, Usuario
+from flask import Blueprint, flash, redirect, render_template, request, session
 
 
 website_bp = Blueprint(
@@ -29,6 +30,28 @@ def entrar():
     return render_template(
         'entrar.html'
     )
+
+
+@website_bp.route('/autenticar', methods=['POST'])
+def autenticar():
+    form = request.form
+    usuario = Usuario.autenticar(
+        form.get('usuario'),
+        form.get('senha')
+    )
+    if usuario:
+        session['usuario'] = usuario.nome
+        session['data'] = datetime.now().__str__()
+        return redirect('/admin')
+    else:
+        flash('Usuário ou senha incorretos!')
+        return redirect('/entrar')
+
+
+@website_bp.route('/sair')
+def sair():
+    session.clear()
+    return redirect('/')
 
 
 @website_bp.route('/contato', methods=['GET', 'POST'])

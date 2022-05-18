@@ -1,5 +1,7 @@
-from flask import Blueprint, redirect, request, render_template
+from flask import Blueprint, flash, redirect, request, render_template, session
 from database.classes import Curso
+from admin.decorators import login_required
+
 
 admin_bp = Blueprint(
     'admin',
@@ -9,11 +11,13 @@ admin_bp = Blueprint(
 
 
 @admin_bp.route('/')
+@login_required
 def home():
     return render_template('admin/home.html')
 
 
 @admin_bp.route('/cursos')
+@login_required
 def cursos():
     return render_template(
         'admin/cursos.html',
@@ -22,6 +26,7 @@ def cursos():
 
 
 @admin_bp.route('/cursos/criar', methods=['GET', 'POST'])
+@login_required
 def cursos_criar():
     curso = {}
     erros = []
@@ -50,6 +55,7 @@ def cursos_criar():
 
 
 @admin_bp.route('/cursos/alterar/<sigla>', methods=['GET', 'POST'])
+@login_required
 def cursos_alterar(sigla):
     curso = Curso.obter(sigla)
     erros = []
@@ -78,6 +84,7 @@ def cursos_alterar(sigla):
 
 
 @admin_bp.route('/cursos/remover/<sigla>', methods=['POST'])
+@login_required
 def cursos_remover(sigla):
     Curso.remover(sigla)
     return redirect('/admin/cursos')
