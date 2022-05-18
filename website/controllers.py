@@ -1,9 +1,15 @@
-from app import app
 from database.classes import Curso, Disciplina, Premio
-from flask import render_template, request
+from flask import Blueprint, render_template, request
 
 
-@app.route('/')
+website_bp = Blueprint(
+    'website',
+    __name__,
+    template_folder='templates'
+)
+
+
+@website_bp.route('/')
 def index():
     return render_template(
         'index.html',
@@ -11,21 +17,21 @@ def index():
     )
 
 
-@app.route('/sobre')
+@website_bp.route('/sobre')
 def sobre():
     return render_template(
         'sobre.html'
     )
 
 
-@app.route('/entrar')
+@website_bp.route('/entrar')
 def entrar():
     return render_template(
         'entrar.html'
     )
 
 
-@app.route('/contato', methods=['GET', 'POST'])
+@website_bp.route('/contato', methods=['GET', 'POST'])
 def contato():
 
     if request.method == 'POST':
@@ -45,17 +51,12 @@ def contato():
     )
 
 
-@app.route('/cursos/ads')
-def cursos():
-    objeto = Curso.obter('ads')
+@website_bp.route('/cursos/<sigla>')
+def cursos(sigla):
+    objeto = Curso.obter(sigla)
     disciplinas = Disciplina.filtrar(objeto.sigla)
     return render_template(
         'curso.html',
         curso=objeto,
         disciplinas=disciplinas
     )
-
-
-@app.context_processor
-def listar_cursos():
-    return dict(cursos_menu=Curso.listar())
