@@ -2,7 +2,6 @@
 
 :label: Tecnologia Principal: Python
 <br> :label: Tecnologia Secundária: HTML e CSS
-<br> :bricks: Framework: 
 <br> :page_facing_up: Padronização: pep8
 
 ## :dart: Sobre
