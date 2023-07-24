@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Faculdade Impacta | {% block titulo %}{% endblock %}</title>
@@ -9,6 +10,7 @@
     <script src="/static/scripts/menu.js" defer></script>
     {% block scripts %}{% endblock %}
 </head>
+
 <body>
     <header class="cabecalho">
         <nav class="navegacao">
@@ -24,17 +26,17 @@
                 </button>
                 <div class="dropdown-menu">
                     {% for curso in cursos_menu %}
-                        <a class="item-menu" href="/cursos/{{curso.sigla|lower}}">
-                            {{curso.nome}}
-                        </a>
+                    <a class="item-menu" href="/cursos/{{curso.sigla|lower}}">
+                        {{curso.nome}}
+                    </a>
                     {% endfor %}
                 </div>
             </div>
             {% if session.usuario %}
-                <a class="botao acesso enviar" href="/admin">Admin</a>
-                <a class="botao limpar" href="/sair">Sair</a>
+            <a class="botao acesso enviar" href="/admin">Admin</a>
+            <a class="botao limpar" href="/sair">Sair</a>
             {% else %}
-                <a class="botao acesso" href="/entrar">Entrar</a>
+            <a class="botao acesso" href="/entrar">Entrar</a>
             {% endif %}
             <a class="menu-icone" href="#"></a>
         </nav>
@@ -48,19 +50,23 @@
                 <a class="media-link facebook" href="https://www.facebook.com/FacImpacta/" target="blank">Facebook</a>
             </li>
             <li>
-                <a class="media-link instagram" href="https://www.instagram.com/faculdadeimpacta/" target="blank">Instagram</a>
+                <a class="media-link instagram" href="https://www.instagram.com/faculdadeimpacta/"
+                    target="blank">Instagram</a>
             </li>
             <li>
-                <a class="media-link linkedin" href="https://www.linkedin.com/edu/faculdade-impacta-tecnologia-161006/" target="blank">Linkedin</a>
+                <a class="media-link linkedin" href="https://www.linkedin.com/edu/faculdade-impacta-tecnologia-161006/"
+                    target="blank">Linkedin</a>
             </li>
             <li>
                 <a class="media-link twitter" href="https://twitter.com/facimpacta/" target="blank">Twitter</a>
             </li>
             <li>
-                <a class="media-link youtube" href="https://www.youtube.com/user/GrupoImpacta/" target="blank">Youtube</a>
+                <a class="media-link youtube" href="https://www.youtube.com/user/GrupoImpacta/"
+                    target="blank">Youtube</a>
             </li>
         </ul>
         <p>2020 Faculdade Impacta 11 3254-8300 Todos os direitos reservados.</p>
     </footer>
 </body>
+
 </html>

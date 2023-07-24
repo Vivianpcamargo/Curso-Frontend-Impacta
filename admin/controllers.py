@@ -1,4 +1,4 @@
-from flask import Blueprint, flash, redirect, request, render_template, session
+from flask import Blueprint, redirect, request, render_template
 from database.classes import Curso
 from admin.decorators import login_required
 

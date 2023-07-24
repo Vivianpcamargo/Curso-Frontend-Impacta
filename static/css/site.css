@@ -26,7 +26,12 @@ a {
     text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--cor-azul);
 }
 
@@ -146,7 +151,8 @@ h1 {
         padding-bottom: 8px;
     }
 
-    .navegacao a:not(:first-child):not(.menu-icone), .navegacao .dropdown {
+    .navegacao a:not(:first-child):not(.menu-icone),
+    .navegacao .dropdown {
         display: none;
     }
 
@@ -172,7 +178,7 @@ h1 {
         padding: 5px 8px;
     }
 
-    .navegacao.ativo .dropdown-menu .item-menu:not(:last-child){
+    .navegacao.ativo .dropdown-menu .item-menu:not(:last-child) {
         border-bottom: 1px solid var(--cor-cinza-claro);
     }
 
@@ -237,13 +243,27 @@ main {
     width: 16px
 }
 
-.media-link.facebook { background-image: url("imagens/facebook-3-64.png"); }
-.media-link.linkedin { background-image: url("imagens/linkedin-3-64.png"); }
-.media-link.instagram { background-image: url("imagens/instagram-64.png"); }
-.media-link.twitter { background-image: url("imagens/twitter-3-64.png"); }
-.media-link.youtube { background-image: url("imagens/youtube-64.png"); }
+.media-link.facebook {
+    background-image: url("imagens/facebook-3-64.png");
+}
 
- /**
+.media-link.linkedin {
+    background-image: url("imagens/linkedin-3-64.png");
+}
+
+.media-link.instagram {
+    background-image: url("imagens/instagram-64.png");
+}
+
+.media-link.twitter {
+    background-image: url("imagens/twitter-3-64.png");
+}
+
+.media-link.youtube {
+    background-image: url("imagens/youtube-64.png");
+}
+
+/**
   * Estilos de Botões 
   */
 .botao {

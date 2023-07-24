@@ -3,43 +3,43 @@
 {% block titulo %} Controle de Cursos {% endblock %}
 
 {% block scripts %}
-    <script src="/static/scripts/admin.js" defer></script>
+<script src="/static/scripts/admin.js" defer></script>
 {% endblock %}
 
 {% block admin %}
-    <h2>Controle de Cursos</h2>
-    <div class="botoes">
-        <a href="/admin/cursos/criar" class="botao enviar incluir">
-            Novo Curso
-        </a>
-    </div>
-    <table class="crud">
-        <tr>
-            <th>Nome</th>
-            <th>Sigla</th>
-            <th>Coordenador</th>
-            <th>Tipo</th>
-            <th>Duração</th>
-            <th>Ações</th>
-        </tr>
-        {% for curso in cursos %}
-            <tr>
-                <td>{{curso.nome}}</td>
-                <td>{{curso.sigla}}</td>
-                <td>{{curso.coordenador}}</td>
-                <td>{{curso.tipo}}</td>
-                <td>{{curso.duracao}}</td>
-                <td>
-                    <a href="/admin/cursos/alterar/{{curso.sigla}}" class="botao">
-                        Alterar
-                    </a>
-                    <form method="POST" class="remover" action="/admin/cursos/remover/{{curso.sigla}}">
-                        <button type="submit" class="botao limpar">
-                            Remover
-                        </button>
-                    </form>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
+<h2>Controle de Cursos</h2>
+<div class="botoes">
+    <a href="/admin/cursos/criar" class="botao enviar incluir">
+        Novo Curso
+    </a>
+</div>
+<table class="crud">
+    <tr>
+        <th>Nome</th>
+        <th>Sigla</th>
+        <th>Coordenador</th>
+        <th>Tipo</th>
+        <th>Duração</th>
+        <th>Ações</th>
+    </tr>
+    {% for curso in cursos %}
+    <tr>
+        <td>{{curso.nome}}</td>
+        <td>{{curso.sigla}}</td>
+        <td>{{curso.coordenador}}</td>
+        <td>{{curso.tipo}}</td>
+        <td>{{curso.duracao}}</td>
+        <td>
+            <a href="/admin/cursos/alterar/{{curso.sigla}}" class="botao">
+                Alterar
+            </a>
+            <form method="POST" class="remover" action="/admin/cursos/remover/{{curso.sigla}}">
+                <button type="submit" class="botao limpar">
+                    Remover
+                </button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}

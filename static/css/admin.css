@@ -36,7 +36,8 @@ div.botoes {
     text-align: right;
 }
 
-div.botoes .botao, table.crud .botao {
+div.botoes .botao,
+table.crud .botao {
     padding: 5px;
 }
 
@@ -46,12 +47,13 @@ table.crud {
     width: 100%;
 }
 
-table.crud td, table.crud th {
+table.crud td,
+table.crud th {
     border: 1px solid var(--cor-cinza);
     padding: 8px;
 }
 
-table.crud tr:nth-child(even){
+table.crud tr:nth-child(even) {
     background-color: var(--cor-branca);
 }
 

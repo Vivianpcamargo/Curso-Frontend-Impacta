@@ -1,15 +1,15 @@
 const drop = document.querySelector('.dropdown-menu'),
-      nav = document.querySelector('nav')
+    nav = document.querySelector('nav')
 
-document.addEventListener('click' , (event) => {
+document.addEventListener('click', (event) => {
     let elemento = event.target
-    if(elemento.classList.contains('dropdown-button')){
+    if (elemento.classList.contains('dropdown-button')) {
         drop.classList.toggle('ativo')
     } else {
         drop.classList.remove('ativo')
     }
 
-    if(elemento.classList.contains('menu-icone')){
+    if (elemento.classList.contains('menu-icone')) {
         event.preventDefault()
         nav.classList.toggle('ativo')
     }
